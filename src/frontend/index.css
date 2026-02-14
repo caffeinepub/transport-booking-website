@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Dark blue base with yellow accents */
+        --background: 0.08 0.02 250;
+        --foreground: 0.98 0.01 250;
+        
+        --card: 0.12 0.03 250;
+        --card-foreground: 0.98 0.01 250;
+        
+        --popover: 0.12 0.03 250;
+        --popover-foreground: 0.98 0.01 250;
+        
+        --primary: 0.85 0.18 90;
+        --primary-foreground: 0.12 0.03 250;
+        
+        --secondary: 0.20 0.04 250;
+        --secondary-foreground: 0.98 0.01 250;
+        
+        --muted: 0.20 0.04 250;
+        --muted-foreground: 0.65 0.02 250;
+        
+        --accent: 0.85 0.18 90;
+        --accent-foreground: 0.12 0.03 250;
+        
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0.01 250;
+        
+        --border: 0.25 0.04 250;
+        --input: 0.25 0.04 250;
+        --ring: 0.85 0.18 90;
+        
+        --chart-1: 0.85 0.18 90;
+        --chart-2: 0.65 0.15 250;
+        --chart-3: 0.55 0.12 200;
+        --chart-4: 0.75 0.16 280;
+        --chart-5: 0.70 0.14 150;
+    }
+
+    .dark {
+        --background: 0.08 0.02 250;
+        --foreground: 0.98 0.01 250;
+        
+        --card: 0.12 0.03 250;
+        --card-foreground: 0.98 0.01 250;
+        
+        --popover: 0.15 0.03 250;
+        --popover-foreground: 0.98 0.01 250;
+        
+        --primary: 0.85 0.18 90;
+        --primary-foreground: 0.12 0.03 250;
+        
+        --secondary: 0.20 0.04 250;
+        --secondary-foreground: 0.98 0.01 250;
+        
+        --muted: 0.20 0.04 250;
+        --muted-foreground: 0.65 0.02 250;
+        
+        --accent: 0.85 0.18 90;
+        --accent-foreground: 0.12 0.03 250;
+        
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0.01 250;
+        
+        --border: 0.25 0.04 250;
+        --input: 0.25 0.04 250;
+        --ring: 0.85 0.18 90;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Focus visible styles */
+    *:focus-visible {
+        @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+    }
+}
+
+@layer utilities {
+    /* Animation utilities */
+    .animate-in {
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+    }
+    
+    .fade-in {
+        animation-name: fadeIn;
+    }
+    
+    .slide-in-from-top-2 {
+        animation-name: slideInFromTop;
+    }
+    
+    .slide-in-from-left-8 {
+        animation-name: slideInFromLeft;
+    }
+    
+    .slide-in-from-right-8 {
+        animation-name: slideInFromRight;
+    }
+    
+    .delay-150 {
+        animation-delay: 150ms;
+    }
+    
+    .duration-200 {
+        animation-duration: 200ms;
+    }
+    
+    .duration-700 {
+        animation-duration: 700ms;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideInFromTop {
+        from {
+            opacity: 0;
+            transform: translateY(-0.5rem);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes slideInFromLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-2rem);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    @keyframes slideInFromRight {
+        from {
+            opacity: 0;
+            transform: translateX(2rem);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}

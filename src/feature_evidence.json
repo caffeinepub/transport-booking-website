@@ -1,0 +1,24 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-insert-the-following-google-search-console-verification-meta-tag-inside-the-head-of-the-main-html-entry-file-at-frontend-index-html-meta-name-google-site-verification-content-ijrggoydyzgbpwqvtfnrgekp8-g0kceyhwnjnpswr60",
+      "featureTitle": "Insert the following Google Search Console verification meta tag inside the <head> of the main HTML entry file at frontend/index.html: <meta name=\"google-site-verification\" content=\"IjrggOYDYzGbpwqvtFNRgEKp8_g0kCeYhwNJnpSwr60\" />",
+      "files": [
+        "frontend/index.html"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

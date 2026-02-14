@@ -1,0 +1,22 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add Google Search Console verification meta tag",
+  "requirements": [
+    {
+      "id": "REQ-13",
+      "summary": "Add the Google Search Console verification meta tag to the main HTML document head.",
+      "acceptanceCriteria": [
+        "frontend/index.html contains exactly one <meta name=\"google-site-verification\" ...> tag with content=\"IjrggOYDYzGbpwqvtFNRgEKp8_g0kCeYhwNJnpSwr60\" inside the <head> element.",
+        "The application builds successfully and the tag is present in the rendered document <head> when visiting the site."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Insert <meta name=\"google-site-verification\" content=\"IjrggOYDYzGbpwqvtFNRgEKp8_g0kCeYhwNJnpSwr60\" /> inside the <head> element, ensuring there is exactly one such tag (avoid duplicates) and making no other SEO/third-party additions."
+        }
+      ]
+    }
+  ]
+}

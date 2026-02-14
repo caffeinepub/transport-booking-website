@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 11,
+  "summary": "Build a functional Transport Booking Website using React frontend + Motoko backend with canister storage only (no external APIs/services). Includes homepage booking flow, vehicle listings with images, owner profile section, secure admin dashboard to manage bookings, and a public booking-status lookup page; styled as a premium dark-blue/yellow ride-booking UI.",
+  "architectural_notes": [
+    "Tech constraints: React frontend + Motoko backend only; persist data in canister storage (no Node/Firebase/MongoDB/external APIs/payment gateways).",
+    "Routing includes /admin (protected) and /status (public status lookup).",
+    "Data model includes bookings (with ID, customer/trip fields, status) and vehicles (name, image, driver)."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-modern-premium-homepage-that-includes-1-a-hero-section-2-the-headline-text-exactly-book-reliable-transport-instantly-and-3-a-prominent-booking-form-card-ensure-smooth-ui-interactions-and-mobile-responsiveness",
+      "title": "Create a modern, premium homepage that includes: (1) a hero section, (2) the headline text exactly \"Book Reliable Transport Instantly\", and (3) a prominent booking form card; ensure smooth UI interactions and mobile responsiveness.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-working-booking-submission-flow-the-booking-form-must-collect-name-phone-pickup-drop-date-time-vehicle-notes-on-submit-persist-the-booking-to-motoko-canister-storage-and-show-the-success-message-exactly-booking-request-submitted",
+      "title": "Implement a working booking submission flow: the booking form must collect Name, Phone, Pickup, Drop, Date, Time, Vehicle, Notes; on submit, persist the booking to Motoko canister storage and show the success message exactly \"Booking Request Submitted\".",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-vehicle-section-that-renders-vehicle-cards-for-the-following-entries-and-shows-each-vehicle-image-and-driver-name-pickup-truck-mukesh-pickup-truck-jainul-pickup-truck-hazrat-innova-crysta-sukumar-ruj-mahindra-tractor-manjhalo-vehicle-images-must-be-real-looking-photorealistic-and-included-as-static-frontend-assets-no-external-image-urls",
+      "title": "Add a Vehicle section that renders vehicle cards for the following entries and shows each vehicle image and driver name: Pickup Truck – Mukesh; Pickup Truck – Jainul; Pickup Truck – Hazrat; Innova Crysta – Sukumar Ruj; Mahindra Tractor – Manjhalo. Vehicle images must be real-looking (photorealistic) and included as static frontend assets (no external image URLs).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-owner-section-with-a-profile-card-that-includes-circular-image-upload-client-side-owner-name-manoj-kumar-das-title-text-owner-and-contact-buttons-for-phone-8294950710-and-email-riteshdas58888-gmail-com",
+      "title": "Create an Owner section with a profile card that includes: circular image upload (client-side), owner name \"Manoj Kumar Das\", title text \"Owner\", and contact buttons for phone (8294950710) and email (riteshdas58888@gmail.com).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-secure-admin-panel-at-route-admin-with-login-required-using-internet-identity-only-authorized-admin-principals-may-access-the-dashboard-the-dashboard-must-list-all-bookings-with-customer-info-provide-a-booking-status-selector-and-a-delete-booking-button-admin-actions-must-update-canister-stored-data",
+      "title": "Implement a secure Admin Panel at route /admin with login required using Internet Identity; only authorized admin principals may access the dashboard. The dashboard must list all bookings with customer info, provide a booking status selector, and a delete booking button. Admin actions must update canister-stored data.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-public-booking-status-check-page-at-route-status-where-a-customer-can-enter-either-a-phone-number-or-a-booking-id-and-see-matching-booking-s-and-their-current-status-from-canister-storage",
+      "title": "Create a public Booking Status Check page at route /status where a customer can enter either a phone number or a booking ID and see matching booking(s) and their current status from canister storage.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-premium-ride-booking-ui-style-across-all-pages-using-a-dark-blue-base-with-yellow-accents-rounded-cards-shadows-smooth-animations-and-mobile-responsive-layouts-keep-all-user-facing-text-in-english",
+      "title": "Apply a premium ride-booking UI style across all pages using a dark blue base with yellow accents, rounded cards, shadows, smooth animations, and mobile-responsive layouts; keep all user-facing text in English.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-default-owner-profile-image-from-the-user-uploaded-photo-img-20250504-wa0039-original-jpeg-as-a-static-frontend-asset-and-display-it-in-the-owner-profile-circle-when-the-user-has-not-uploaded-a-replacement-image-yet",
+      "title": "Add a default Owner profile image (from the user-uploaded photo IMG-20250504-WA0039_Original.jpeg) as a static frontend asset and display it in the Owner profile circle when the user has not uploaded a replacement image yet.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-owner-section-component-at-frontend-src-components-ownersection-tsx-to-use-the-user-uploaded-image-file-img-20250504-wa0039-original-1-jpeg-as-the-default-owner-profile-picture-when-no-custom-image-has-been-selected-via-the-image-upload-control",
+      "title": "Update the Owner section component at frontend/src/components/OwnerSection.tsx to use the user-uploaded image file IMG-20250504-WA0039_Original-1.jpeg as the default owner profile picture when no custom image has been selected via the image upload control.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-frontend-src-components-vehiclessection-tsx-so-that-the-pickup-truck-vehicle-card-s-display-the-uploaded-image-img-6733-1-jpeg-as-their-vehicle-image-in-the-fleet-grid",
+      "title": "Update frontend/src/components/VehiclesSection.tsx so that the Pickup Truck vehicle card(s) display the uploaded image \"IMG_6733-1.jpeg\" as their vehicle image in the fleet grid.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-insert-the-following-google-search-console-verification-meta-tag-inside-the-head-of-the-main-html-entry-file-at-frontend-index-html-meta-name-google-site-verification-content-ijrggoydyzgbpwqvtfnrgekp8-g0kceyhwnjnpswr60",
+      "title": "Insert the following Google Search Console verification meta tag inside the <head> of the main HTML entry file at frontend/index.html: <meta name=\"google-site-verification\" content=\"IjrggOYDYzGbpwqvtFNRgEKp8_g0kCeYhwNJnpSwr60\" />",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Homepage with premium ride-booking UI (hero, headline, booking form card, responsive dark-blue/yellow styling, smooth animations)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Booking system: working booking form that stores submissions in canister database and shows 'Booking Request Submitted' confirmation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Vehicle section: display vehicle cards with driver assignments and real vehicle images (Pickup Truck—Mukesh/Jainul/Hazrat, Innova Crysta—Sukumar Ruj, Mahindra Tractor—Manjhalo)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Owner section: profile card with circular image upload, owner name/title, and contact buttons",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Admin panel at /admin with secure login; dashboard lists all bookings, allows status changes and booking deletion",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Booking status check page at /status: lookup by phone number or booking ID and display current booking status",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Backend: define canister data models and APIs to support booking creation, retrieval, status updates, deletion, and lookup by booking ID and phone number; persist data in stable canister storage and enforce admin-only access for admin operations.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Owner section: add/display an owner profile image (provide a default/static owner image and show it in the owner profile card)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Update VehiclesSection to use the user-uploaded image as the Pickup vehicle display image (replace current pickup vehicle image asset)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Add the user-uploaded image file \"IMG_6733-1.jpeg\" to the frontend static assets so it can be referenced by the UI without using any external image URL.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Add Google Search Console verification meta tag to the site by inserting <meta name=\"google-site-verification\" ...> into the <head> of the main HTML (React app index.html).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Transport Booking Website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

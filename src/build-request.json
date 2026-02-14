@@ -1,0 +1,44 @@
+{
+  "kind": "build_request",
+  "title": "Add Google Search Console verification meta tag",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-13",
+      "text": "Insert the following Google Search Console verification meta tag inside the <head> of the main HTML entry file at frontend/index.html: <meta name=\"google-site-verification\" content=\"IjrggOYDYzGbpwqvtFNRgEKp8_g0kCeYhwNJnpSwr60\" />",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "Add this meta tag inside the head section of my website:\n\n<meta name=\"google-site-verification\" content=\"IjrggOYDYzGbpwqvtFNRgEKp8_g0kCeYhwNJnpSwr60\" />"
+        ]
+      },
+      "acceptanceCriteria": [
+        "frontend/index.html contains exactly one <meta name=\"google-site-verification\" ...> tag with content=\"IjrggOYDYzGbpwqvtFNRgEKp8_g0kCeYhwNJnpSwr60\" inside the <head> element.",
+        "The application builds successfully and the tag is present in the rendered document <head> when visiting the site."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui."
+  ],
+  "nonGoals": [
+    "Do not add any additional SEO tags, analytics scripts, or other third-party verification methods beyond the single meta tag requested."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

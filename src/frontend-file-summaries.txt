@@ -1,0 +1,21 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup for three routes (/, /admin, /status) wrapped in AppLayout with shared navigation and footer.",
+  "frontend/src/components/AppLayout.tsx": "Shared layout wrapper providing sticky header with navigation, mobile menu, login button, and footer with caffeine.ai attribution; applies dark blue gradient background.",
+  "frontend/src/components/LoginButton.tsx": "Reusable login/logout button component using Internet Identity with loading states and query cache clearing on logout.",
+  "frontend/src/components/AccessDeniedScreen.tsx": "Full-screen access denied message for authenticated non-admin users attempting to access admin routes.",
+  "frontend/src/components/BookingFormCard.tsx": "Complete booking form card with validation, submission to backend, and success state showing booking ID; uses vehicle constants for dropdown.",
+  "frontend/src/components/VehiclesSection.tsx": "Grid display of five vehicle cards with images and driver names; uses uploaded IMG_6733-1.jpeg for all Pickup Truck vehicles while other vehicles retain their generated images.",
+  "frontend/src/components/OwnerSection.tsx": "Owner profile card displaying the uploaded owner portrait (IMG-20250504-WA0039_Original-1.jpeg) as the default image with circular display, contact information, and clickable phone/email buttons; supports client-side image upload preview that replaces the default image.",
+  "frontend/src/pages/HomePage.tsx": "Homepage with hero section, exact headline text, booking form, features grid, vehicles section, owner section, and CTA; includes smooth animations.",
+  "frontend/src/pages/AdminPage.tsx": "Admin dashboard with authentication check, user profile setup dialog, booking statistics, full bookings table with status updates and delete functionality.",
+  "frontend/src/pages/StatusPage.tsx": "Public booking status lookup page with search form supporting phone number input and detailed booking results display.",
+  "frontend/src/hooks/useBookings.ts": "React Query hook for submitting new bookings to the backend canister.",
+  "frontend/src/hooks/useUserProfile.ts": "React Query hooks for fetching and saving user profiles with proper loading state handling to prevent modal flash.",
+  "frontend/src/hooks/useAdminBookings.ts": "React Query hooks for admin operations including checking admin status, fetching all bookings, updating status, and deleting bookings.",
+  "frontend/src/hooks/useBookingStatusLookup.ts": "React Query hook for searching bookings by phone number with support for booking ID format.",
+  "frontend/src/constants/vehicles.ts": "Single source of truth for the five vehicle/driver pairings with local image paths.",
+  "frontend/src/index.css": "Imports root index.css and adds custom animations for smooth page transitions.",
+  "frontend/index.css": "Complete OKLCH-based design system with dark blue base (hue 250) and yellow accent (hue 90), custom animations, and focus-visible styles.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the theme with OKLCH color tokens, custom border radius, shadows, and animations.",
+  "frontend/index.html": "Main HTML entry point with Google Search Console verification meta tag, charset, viewport, and title configuration."
+}
